@@ -1,2 +1,1 @@
-# React_Pizza
-Pizza e-shop
+React Pizza E-shop

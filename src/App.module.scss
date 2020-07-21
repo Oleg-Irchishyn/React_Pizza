@@ -1,0 +1,57 @@
+/*Media quieries mixins*/
+
+@mixin xs-devices {
+  @media screen and (max-width: 575px) {
+    @content;
+  }
+}
+@mixin sm-devices {
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin md-devices {
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+@mixin lg-devices {
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
+}
+@mixin xl-devices {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin landscape-orientation {
+  @media screen and (max-width: 991px) and (orientation: landscape) {
+    @content;
+  }
+}
+.App {
+  text-align: center;
+  background: red;
+}
+
+.AppLogo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .AppLogo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
