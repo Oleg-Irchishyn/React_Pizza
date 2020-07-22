@@ -13,7 +13,7 @@ const Header = (props) => {
             <p>самая вкусная пицца во вселенной</p>
           </div>
         </div>
-        <Button outline />
+        <Button outline className={"button--cart"} />
       </div>
     </div>
   )

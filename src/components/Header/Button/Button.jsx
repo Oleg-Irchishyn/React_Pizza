@@ -1,9 +1,10 @@
 import React from 'react';
 import cn from "classnames";
-const Button = ({ outline }) => {
+import { NavLink } from 'react-router-dom';
+const Button = ({ outline, className }) => {
   return (
     <div className="header__cart">
-      <a href="/cart.html" className={cn('button', 'button--cart', {
+      <NavLink to="/cart" className={cn('button', className, {
         'button-outline': outline
       })}>
         <span>520 ₽</span>
@@ -38,7 +39,7 @@ const Button = ({ outline }) => {
           />
         </svg>
         <span>3</span>
-      </a>
+      </NavLink>
     </div>
   )
 }

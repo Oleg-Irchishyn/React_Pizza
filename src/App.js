@@ -9,7 +9,8 @@ import { initializeApp } from './redux/reducers/appReducer';
 import { initializeAppSelector } from './redux/selectors/appSelectors';
 import Preloader from './components/common/Preloader/Preloader';
 import PropTypes from 'prop-types';
-import Header from './components/Header/Header';
+import { Header, Categories } from './components';
+
 
 const App = ({ initialized }) => {
   useEffect(() => {
@@ -24,16 +25,13 @@ const App = ({ initialized }) => {
       <div className="content">
         <div className="container">
           <div className="content__top">
-            <div className="categories">
-              <ul>
-                <li className="active">Все</li>
-                <li>Мясные</li>
-                <li>Вегетарианская</li>
-                <li>Гриль</li>
-                <li>Острые</li>
-                <li>Закрытые</li>
-              </ul>
-            </div>
+            <Categories onClickItem={(item) => console.log(item)} items={[
+              'Мясные',
+              'Вегетарианская',
+              'Гриль',
+              'Острые',
+              'Закрытые'
+            ]} />
             <div className="sort">
               <div className="sort__label">
                 <svg
