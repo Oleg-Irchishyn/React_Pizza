@@ -3,7 +3,7 @@ import { mainAPI } from "../../api/api";
 const SET_PIZZAS = 'react-pizza/app/SET_PIZZAS';
 
 let initialState = {
-  items: []
+  items: null
 }
 
 const mainReducer = (state = initialState, action) => {
