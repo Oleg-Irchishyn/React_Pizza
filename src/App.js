@@ -5,15 +5,13 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose, bindActionCreators } from 'redux';
 import *as appActions from './redux/reducers/appReducer';
-import { initializeApp } from './redux/reducers/appReducer';
 import { initializeAppSelector } from './redux/selectors/appSelectors';
 import Preloader from './components/common/Preloader/Preloader';
 import PropTypes from 'prop-types';
-import { Header, Cart } from './components';
-import Main from './components/Main/Main';
+import { Header, Cart, MainContainer } from './components';
 
 
-const App = ({ initialized }) => {
+const App = ({ initialized, initializeApp }) => {
   useEffect(() => {
     initializeApp();
   }, [])
@@ -26,7 +24,7 @@ const App = ({ initialized }) => {
       <Header />
       <div className="content">
         <Switch>
-          <Route exact path="/" render={() => <Main />} />
+          <Route exact path="/" render={() => <MainContainer />} />
           <Route path="/cart" render={() => <Cart />} />
         </Switch>
       </div>

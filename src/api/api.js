@@ -5,7 +5,7 @@ const instance = axios.create({
 });
 
 
-export const pizzasAPI = {
+export const mainAPI = {
   getPizzas: () => {
     return instance.get('db.json').then(response => {
       return response.data.pizzas;

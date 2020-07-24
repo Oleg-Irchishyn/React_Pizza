@@ -10,8 +10,6 @@ import 'font-awesome/css/font-awesome.min.css';
 ReactDOM.render(
   <HashRouter /*basename={process.env.PUBLIC_URL} - это строка нужна для BrowserRouter для github pages*/>
     <Provider store={store}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <App />
     </Provider>
   </HashRouter>, document.getElementById('root'));

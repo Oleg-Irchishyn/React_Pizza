@@ -3,10 +3,12 @@ import appReducer from "./reducers/appReducer";
 import thunkMiddleware from "redux-thunk";
 import logger from "redux-logger"
 import { reducer as formReducer } from "redux-form";
+import mainReducer from "./reducers/mainReducer";
 
 
 let reducers = combineReducers({
   app: appReducer,
+  main: mainReducer,
   form: formReducer
 });
 
