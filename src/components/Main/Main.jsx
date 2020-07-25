@@ -35,7 +35,7 @@ const Main = ({ pizzas }) => {
       <div className="content__items">
         {
           pizzas && pizzas.map((pizza) => (
-            <PizzaBlock key={pizza.id} pizza={pizza} />
+            <PizzaBlock key={pizza.id}{...pizza} />
           ))
         }
       </div>
