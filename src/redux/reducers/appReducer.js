@@ -1,4 +1,4 @@
-import { setPizzasSuccess } from "./mainReducer";
+import { setPizzasSuccess } from "./pizzasReducer";
 
 const INITIALIZED_SUCCESS = 'react-pizza/app/INITIALIZED_SUCCESS';
 

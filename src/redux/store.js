@@ -3,19 +3,21 @@ import appReducer from "./reducers/appReducer";
 import thunkMiddleware from "redux-thunk";
 import logger from "redux-logger"
 import { reducer as formReducer } from "redux-form";
-import mainReducer from "./reducers/mainReducer";
+import pizzasReducer from "./reducers/pizzasReducer";
+import filtersReducer from "./reducers/filtersReducer";
 
 
-let reducers = combineReducers({
+let rootReducer = combineReducers({
   app: appReducer,
-  main: mainReducer,
+  pizzas: pizzasReducer,
+  filters: filtersReducer,
   form: formReducer
 });
 
 const middlewares = [thunkMiddleware, logger]
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducers, composeEnhancers(applyMiddleware(...middlewares)));
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(...middlewares)));
 
 window.__store__ = store;
 export default store;

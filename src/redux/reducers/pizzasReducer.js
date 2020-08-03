@@ -3,10 +3,11 @@ import { mainAPI } from "../../api/api";
 const SET_PIZZAS = 'react-pizza/app/SET_PIZZAS';
 
 let initialState = {
-  items: null
+  items: null,
+  isReady: false
 }
 
-const mainReducer = (state = initialState, action) => {
+const pizzasReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_PIZZAS:
       return {
@@ -31,4 +32,4 @@ export const setPizzasSuccess = () => {
   }
 }
 
-export default mainReducer;
+export default pizzasReducer;

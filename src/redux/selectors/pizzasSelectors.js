@@ -1,3 +1,3 @@
 export const getPizzas = (state) => {
-  return state.main.items;
+  return state.pizzas.items;
 }

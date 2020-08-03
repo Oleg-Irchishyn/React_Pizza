@@ -3,8 +3,8 @@ import { compose, bindActionCreators } from 'redux';
 import { Categories, SortPopup } from '../../components';
 import PizzaBlock from './PizzaBlock/PizzaBlock';
 import { connect } from 'react-redux';
-import *as mainActions from '../../redux/reducers/mainReducer';
-import { getPizzas } from '../../redux/selectors/mainSelectors';
+import *as pizzasActions from '../../redux/reducers/pizzasReducer';
+import { getPizzas } from '../../redux/selectors/pizzasSelectors';
 
 
 const MainContainer = ({ setPizzasSuccess, ...props }) => {
@@ -26,9 +26,9 @@ const Main = ({ pizzas }) => {
           'Закрытые'
         ]} />
         <SortPopup items={[
-          'популярности',
-          'цене',
-          'алфавиту',
+          {name:'популярности', type: 'popular'},
+          {name:'цене', type: 'price'},
+          {name:'алфавиту', type: 'alphabet'}
         ]} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
@@ -49,7 +49,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  ...bindActionCreators(mainActions, dispatch)
+  ...bindActionCreators(pizzasActions, dispatch)
 })
 
 export default compose(
