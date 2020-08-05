@@ -5,14 +5,16 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose, bindActionCreators } from 'redux';
 import *as appActions from './redux/reducers/appReducer';
+import *as pizzasActions from './redux/reducers/pizzasReducer';
 import { initializeAppSelector } from './redux/selectors/appSelectors';
 import Preloader from './components/common/Preloader/Preloader';
 import PropTypes from 'prop-types';
 import { Header, Cart, MainContainer } from './components';
 
 
-const App = ({ initialized, initializeApp }) => {
+const App = ({ initialized, initializeApp, setPizzasSuccess }) => {
   useEffect(() => {
+    setPizzasSuccess();
     initializeApp();
   }, [])
 
@@ -37,7 +39,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  ...bindActionCreators(appActions, dispatch)
+  ...bindActionCreators(appActions, dispatch),
+  ...bindActionCreators(pizzasActions, dispatch)
 })
 
 App.propTypes = {

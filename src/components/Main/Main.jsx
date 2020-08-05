@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { compose, bindActionCreators } from 'redux';
 import { Categories, SortPopup } from '../../components';
 import PizzaBlock from './PizzaBlock/PizzaBlock';
@@ -7,29 +7,30 @@ import *as pizzasActions from '../../redux/reducers/pizzasReducer';
 import { getPizzas } from '../../redux/selectors/pizzasSelectors';
 
 
-const MainContainer = ({ setPizzasSuccess, ...props }) => {
-  useEffect(() => {
-    setPizzasSuccess();
-  }, [])
+const MainContainer = ({ ...props }) => {
   return <Main {...props} />
 }
 
 const Main = ({ pizzas }) => {
+  const categoryNames = [
+    'Мясные',
+    'Вегетарианская',
+    'Гриль',
+    'Острые',
+    'Закрытые'
+  ];
+
+  const sortItems = [
+    { name: 'популярности', type: 'popular' },
+    { name: 'цене', type: 'price' },
+    { name: 'алфавиту', type: 'alphabet' }
+  ];
+
   return (
     <div className="container">
       <div className="content__top">
-        <Categories items={[
-          'Мясные',
-          'Вегетарианская',
-          'Гриль',
-          'Острые',
-          'Закрытые'
-        ]} />
-        <SortPopup items={[
-          {name:'популярности', type: 'popular'},
-          {name:'цене', type: 'price'},
-          {name:'алфавиту', type: 'alphabet'}
-        ]} />
+        <Categories items={categoryNames} />
+        <SortPopup items={sortItems} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
