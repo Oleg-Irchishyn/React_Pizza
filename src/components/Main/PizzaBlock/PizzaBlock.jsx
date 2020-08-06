@@ -3,6 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 const PizzaBlock = ({ imageUrl, name, price, types, sizes }) => {
+
   const availableTypes = ["тонкое", "традиционное"];
   const availableSizes = [26, 30, 40];
 

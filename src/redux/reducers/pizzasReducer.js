@@ -4,7 +4,7 @@ const SET_PIZZAS = 'react-pizza/app/SET_PIZZAS';
 
 let initialState = {
   items: null,
-  isReady: false
+  isLoaded: false
 }
 
 const pizzasReducer = (state = initialState, action) => {
@@ -13,7 +13,7 @@ const pizzasReducer = (state = initialState, action) => {
       return {
         ...state,
         items: action.payload,
-        isReady: true
+        isLoaded: true
       }
     default:
       return state;
