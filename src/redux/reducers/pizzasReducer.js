@@ -1,6 +1,7 @@
 import { mainAPI } from "../../api/api";
 
-const SET_PIZZAS = 'react-pizza/app/SET_PIZZAS';
+const SET_PIZZAS = 'react-pizza/pizzas/SET_PIZZAS';
+const SET_LOADED = 'react-pizza/pizzas/SET_LOADED';
 
 let initialState = {
   items: null,
@@ -15,6 +16,11 @@ const pizzasReducer = (state = initialState, action) => {
         items: action.payload,
         isLoaded: true
       }
+    case SET_LOADED:
+      return {
+        ...state,
+        isLoaded: action.value
+      }
     default:
       return state;
   }
@@ -25,9 +31,15 @@ export const setPizzas = (pizzas) => ({
   payload: pizzas
 })
 
-export const setPizzasSuccess = () => {
+export const setLoaded = (value) => ({
+  type: SET_LOADED,
+  value
+})
+
+export const setPizzasSuccess = (category, sortBy) => {
   return async (dispatch) => {
-    let data = await mainAPI.getPizzas();
+    dispatch(setLoaded(false))
+    let data = await mainAPI.getPizzas(category, sortBy);
     dispatch(setPizzas(data));
   }
 }

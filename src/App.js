@@ -10,13 +10,14 @@ import { initializeAppSelector } from './redux/selectors/appSelectors';
 import Preloader from './components/common/Preloader/Preloader';
 import PropTypes from 'prop-types';
 import { Header, Cart, MainContainer } from './components';
+import { getCategory, getSortBy } from './redux/selectors/filtersSelectors';
 
 
-const App = ({ initialized, initializeApp, setPizzasSuccess }) => {
+const App = ({ initialized, initializeApp, category, sortBy, setPizzasSuccess}) => {
   useEffect(() => {
-    setPizzasSuccess();
-    initializeApp();
-  }, [])
+     initializeApp();
+     setPizzasSuccess(category, sortBy)
+  }, [category, sortBy])
 
   if (!initialized) {
     return <Preloader />
@@ -35,7 +36,9 @@ const App = ({ initialized, initializeApp, setPizzasSuccess }) => {
 }
 
 const mapStateToProps = (state) => ({
-  initialized: initializeAppSelector(state)
+  initialized: initializeAppSelector(state),
+  category: getCategory(state),
+  sortBy: getSortBy(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

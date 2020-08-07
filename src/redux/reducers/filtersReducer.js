@@ -3,7 +3,7 @@ const SET_CATEGORY = 'react-pizza/filters/SET_CATEGORY';
 
 let initialState = {
   sortBy: 'popular',
-  category: 0
+  category: null
 }
 
 const filtersReducer = (state = initialState, action) => {

@@ -18,7 +18,7 @@ const PizzaBlock = ({ imageUrl, name, price, types, sizes }) => {
     setActiveSize(index);
   }
 
-  return (
+   return (
     <div className="pizza-block">
       <img
         className="pizza-block__image"

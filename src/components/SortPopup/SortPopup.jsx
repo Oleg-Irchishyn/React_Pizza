@@ -1,11 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 
-const SortPopup = React.memo(({ items }) => {
+const SortPopup = React.memo(({ items, setSortBy }) => {
 
   const [activeItem, setActiveItem] = useState(0);
+
   const onSelectItem = (index) => {
     setActiveItem(index);
     setVisiblePopup(false);
+    setSortBy(index);
   }
 
   const activeLabel = items[activeItem].name;
@@ -64,5 +67,14 @@ const SortPopup = React.memo(({ items }) => {
     </div>
   )
 });
+
+SortPopup.propTypes = {
+  setSortBy: PropTypes.func,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired
+}
+
+SortPopup.defaultProps = {
+  items: []
+}
 
 export default SortPopup;

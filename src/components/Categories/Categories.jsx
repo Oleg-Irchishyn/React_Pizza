@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { compose, bindActionCreators } from 'redux';
 import *as filtersActions from '../../redux/reducers/filtersReducer';
 import { connect } from 'react-redux';
-import { getCategory } from '../../redux/selectors/filtersSelectors';
+import PropTypes from 'prop-types';
 
-const Categories = React.memo(({ items, category, setCategoty }) => {
+const Categories = React.memo(({ items, setCategoty }) => {
   const [activeItem, setActiveItem] = useState(null);
+
   const onSelectItem = (index) => {
     setActiveItem(index);
     setCategoty(index)
@@ -32,14 +33,19 @@ const Categories = React.memo(({ items, category, setCategoty }) => {
   )
 });
 
-const mapStateToProps = (state) => ({
-  category: getCategory(state)
-});
+Categories.propTypes = {
+  setCategory: PropTypes.func,
+  items: PropTypes.arrayOf(PropTypes.string).isRequired
+}
+
+Categories.defaultProps = {
+  items: []
+}
 
 const mapDispatchToProps = (dispatch) => ({
   ...bindActionCreators(filtersActions, dispatch)
 })
 
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps))
+  connect(null, mapDispatchToProps))
   (Categories);
