@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { compose, bindActionCreators } from 'redux';
 import { Categories, SortPopup } from '../../components';
 import PizzaBlock from './PizzaBlock/PizzaBlock';
@@ -10,11 +10,11 @@ import { getCategory,  getSortBy } from '../../redux/selectors/filtersSelectors'
 import PizzaPreloader from '../common/PizzaPreloader/PizzaPreloader';
 
 
-const MainContainer = React.memo(({ category, sortBy, ...props }) => {
+const MainContainer = React.memo(({ ...props }) => {
   return <Main {...props} />
 });
 
-const Main = ({ pizzas, isLoaded, setSortBy }) => {
+const Main = ({ pizzas, isLoaded, setSortBy, sortBy }) => {
   const categoryNames = [
     'Мясные',
     'Вегетарианская',
@@ -24,16 +24,16 @@ const Main = ({ pizzas, isLoaded, setSortBy }) => {
   ];
 
   const sortItems = [
-    { name: 'популярности', type: 'popular' },
-    { name: 'цене', type: 'price' },
-    { name: 'алфавиту', type: 'name' }
+    { name: 'rating', type: 'rating' },
+    { name: 'price', type: 'price' },
+    { name: 'name', type: 'name' }
   ];
 
   return (
     <div className="container">
       <div className="content__top">
         <Categories items={categoryNames} />
-        <SortPopup items={sortItems} setSortBy={setSortBy}/>
+        <SortPopup activeSortType={sortBy} items={sortItems} setSortBy={setSortBy}/>
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
