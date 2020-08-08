@@ -3,7 +3,12 @@ const SET_CATEGORY = 'react-pizza/filters/SET_CATEGORY';
 
 let initialState = {
   sortBy: 'popular',
-  category: null
+  category: null,
+  sortItems: [
+    { name: 'популярности', type: 'popular' },
+    { name: 'цене', type: 'price' },
+    { name: 'алфавиту', type: 'name' }
+  ]
 }
 
 const filtersReducer = (state = initialState, action) => {
@@ -13,11 +18,11 @@ const filtersReducer = (state = initialState, action) => {
         ...state,
         sortBy: action.payload
       }
-      case SET_CATEGORY:
-        return {
-          ...state,
-          category: action.payload
-        }
+    case SET_CATEGORY:
+      return {
+        ...state,
+        category: action.payload
+      }
     default:
       return state;
   }
@@ -29,8 +34,8 @@ export const setSortBy = (type) => ({
 })
 
 export const setCategoty = (catIndex) => ({
-    type: SET_CATEGORY,
-    payload: catIndex
-  })
+  type: SET_CATEGORY,
+  payload: catIndex
+})
 
 export default filtersReducer;
