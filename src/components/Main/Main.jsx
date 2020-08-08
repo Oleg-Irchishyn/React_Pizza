@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import *as pizzasActions from '../../redux/reducers/pizzasReducer';
 import *as filtersActions from '../../redux/reducers/filtersReducer';
 import { getPizzas, isLoading } from '../../redux/selectors/pizzasSelectors';
-import { getCategory, getSortBy } from '../../redux/selectors/filtersSelectors';
+import { getCategory, getSortBy, getSortItems, getAllCategories } from '../../redux/selectors/filtersSelectors';
 import PizzaPreloader from '../common/PizzaPreloader/PizzaPreloader';
 
 
@@ -14,24 +14,12 @@ const MainContainer = React.memo(({ ...props }) => {
   return <Main {...props} />
 });
 
-const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems }) => {
-  const categoryNames = [
-    'Мясные',
-    'Вегетарианская',
-    'Гриль',
-    'Острые',
-    'Закрытые'
-  ];
-
-  const onChangeSortType = (type) => {
-    setSortBy(type);
-  }
-
+const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems }) => {
   return (
     <div className="container">
       <div className="content__top">
-        <Categories items={categoryNames} />
-        <SortPopup activeSortType={sortBy} items={sortItems} onChangeSortType={onChangeSortType} />
+        <Categories items={categoryItems} />
+        <SortPopup activeSortType={sortBy} items={sortItems} setSortBy={setSortBy} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
@@ -50,7 +38,8 @@ const mapStateToProps = (state) => ({
   isLoaded: isLoading(state),
   category: getCategory(state),
   sortBy: getSortBy(state),
-  sortItems: state.filters.sortItems
+  sortItems: getSortItems(state),
+  categoryItems: getAllCategories(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

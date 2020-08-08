@@ -2,12 +2,19 @@ const SET_SORT_BY = 'react-pizza/filters/SET_SORT_BY';
 const SET_CATEGORY = 'react-pizza/filters/SET_CATEGORY';
 
 let initialState = {
-  sortBy: 'popular',
+  sortBy: 'rating',
   category: null,
   sortItems: [
-    { name: 'популярности', type: 'popular' },
-    { name: 'цене', type: 'price' },
-    { name: 'алфавиту', type: 'name' }
+    { name: 'popular', type: 'rating' },
+    { name: 'price', type: 'price' },
+    { name: 'alphabet', type: 'name' }
+  ],
+  categoryItems: [
+    'Meat',
+    'Vegetarian',
+    'Grill',
+    'Spicy',
+    'Closed'
   ]
 }
 

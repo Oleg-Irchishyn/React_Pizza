@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-const SortPopup = React.memo(({ items, activeSortType, onChangeSortType }) => {
+const SortPopup = React.memo(({ items, activeSortType, setSortBy }) => {
 
   const onSelectItem = (type) => {
     setVisiblePopup(false);
-    onChangeSortType(type);
+    setSortBy(type);
   }
 
   const activeLabel = items.find(obj => obj.type === activeSortType).name;
