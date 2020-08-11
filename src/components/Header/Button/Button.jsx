@@ -1,13 +1,21 @@
 import React from 'react';
 import cn from "classnames";
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getTotalPrice, getTotalCount } from '../../../redux/selectors/cartSelectors';
+
 const Button = ({ outline, className }) => {
+  const { totalPrice, totalCount } = useSelector((state) => ({
+    totalPrice: getTotalPrice(state),
+    totalCount: getTotalCount(state)
+  }));
+
   return (
     <div className="header__cart">
       <NavLink to="/cart" className={cn('button', className, {
         'button-outline': outline
       })}>
-        <span>520 ₽</span>
+        <span>{totalPrice}₽</span>
         <div className="button__delimiter"></div>
         <svg
           width="18"
@@ -38,7 +46,7 @@ const Button = ({ outline, className }) => {
             strokeLinejoin="round"
           />
         </svg>
-        <span>3</span>
+        <span> {totalCount}</span>
       </NavLink>
     </div>
   )

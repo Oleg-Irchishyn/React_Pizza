@@ -5,12 +5,14 @@ import logger from "redux-logger"
 import { reducer as formReducer } from "redux-form";
 import pizzasReducer from "./reducers/pizzasReducer";
 import filtersReducer from "./reducers/filtersReducer";
+import cartReducer from "./reducers/cartReducer";
 
 
 let rootReducer = combineReducers({
   app: appReducer,
   pizzas: pizzasReducer,
   filters: filtersReducer,
+  cart: cartReducer,
   form: formReducer
 });
 

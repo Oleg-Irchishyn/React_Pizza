@@ -8,7 +8,7 @@ const instance = axios.create({
 
 export const mainAPI = {
   getPizzas: (category, sortBy) => {
-    return instance.get(`pizzas?${category !== null ? `category=${category}` : null}&_sort=${sortBy}&_order=desc`).then(response => {
+    return instance.get(`pizzas?${category !== null ? `category=${category}` : null}&_sort=${sortBy}&_order=asc`).then(response => {
       /*return response.data.pizzas;*/
       return response.data;
     });

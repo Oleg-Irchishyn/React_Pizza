@@ -3,7 +3,7 @@ import logoSvg from "../../assets/images/pizza-logo.svg";
 import Button from './Button/Button';
 import { NavLink } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = () => {
   return (
     <div className="header">
       <div className="container">
