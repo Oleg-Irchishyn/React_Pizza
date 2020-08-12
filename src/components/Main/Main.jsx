@@ -15,6 +15,9 @@ const MainContainer = React.memo(({ ...props }) => {
 });
 
 const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems }) => {
+  const addPizzaToCart = obj => {
+    console.log(obj);
+  }
   return (
     <div className="container">
       <div className="content__top">
@@ -25,7 +28,7 @@ const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems })
       <div className="content__items">
         {
           isLoaded ? pizzas.map((pizza) => (
-            <PizzaBlock key={pizza.id} {...pizza} isLoaded={true} />
+            <PizzaBlock key={pizza.id} {...pizza} isLoaded={true} onClickAddPizza={addPizzaToCart} />
           )) : Array(10).fill(pizzas).map((_, index) => <PizzaPreloader key={index} />)
         }
       </div>
