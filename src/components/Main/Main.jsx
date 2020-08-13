@@ -17,8 +17,8 @@ const MainContainer = React.memo(({ ...props }) => {
 
 const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems, addPizzaToCart  }) => {
 
-  const handleAddPizzaToCart = obj => {
-    addPizzaToCart(obj)
+  const handleAddPizzaToCart = (object) => {
+    addPizzaToCart(object)
   }
 
   return (

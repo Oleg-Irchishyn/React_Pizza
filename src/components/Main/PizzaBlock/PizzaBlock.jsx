@@ -21,7 +21,8 @@ const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza }
   }
 
   const handleAddPizza = () => {
-    const obj = {
+    debugger
+    const object = {
       id, 
       name,
       imageUrl,
@@ -29,7 +30,7 @@ const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza }
       size: sizes[availableSizes],
       type: types[availableTypes]
     }
-  onClickAddPizza(obj)
+  onClickAddPizza(object)
   }
 
    return (
