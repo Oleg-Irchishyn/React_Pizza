@@ -36,7 +36,7 @@ const cartReducer = (state = initialState, action) => {
 }
 
 export const addPizzaToCart = (object) => ({
-    type: SET_TOTAL_PRICE,
+    type: ADD_PIZZA_TO_CART,
     payload: object
 })
 
