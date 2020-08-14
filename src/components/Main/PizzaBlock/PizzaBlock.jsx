@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import Button from './Button/Button';
+import PizzaBlockButton from './PizzaBlockButton/PizzaBlockButton';
 
 
 const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza }) => {
@@ -73,7 +73,7 @@ const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza }
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price">от {price} ₽</div>
-        <Button onClick={handleAddPizza} className="button button--add"/> 
+        <PizzaBlockButton onClick={handleAddPizza} className="button button--add"/> 
       </div>
     </div>
   )
@@ -85,7 +85,7 @@ PizzaBlock.propTypes = {
   price: PropTypes.number,
   types: PropTypes.arrayOf(PropTypes.number),
   sizes: PropTypes.arrayOf(PropTypes.number),
-  onAddPizza: PropTypes.func
+  onClickAddPizza: PropTypes.func
 }
 
 PizzaBlock.defaultProps = {

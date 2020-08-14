@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from "classnames";
 
-const Button = ({ outline, className }) => {
+const PizzaBlockButton = ({ outline, className }) => {
     return (
         <div  className={cn('button', className, {
           'button-outline': outline
@@ -24,4 +24,4 @@ const Button = ({ outline, className }) => {
     )
 }
 
-export default Button
+export default PizzaBlockButton;
