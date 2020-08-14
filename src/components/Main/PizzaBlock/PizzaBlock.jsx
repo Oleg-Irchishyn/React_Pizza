@@ -20,17 +20,13 @@ const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza }
     setActiveSize(index);
   }
 
-  const handleAddPizza = () => {
-    debugger
-    const object = {
-      id, 
-      name,
-      imageUrl,
-      price,
-      size: sizes[availableSizes],
-      type: types[availableTypes]
-    }
-  onClickAddPizza(object)
+  const pizzaObject = {
+    id, 
+    name,
+    imageUrl,
+    price,
+    size: sizes[availableSizes],
+    type: types[availableTypes]
   }
 
    return (
@@ -73,7 +69,7 @@ const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza }
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price">от {price} ₽</div>
-        <PizzaBlockButton onClick={handleAddPizza} className="button button--add"/> 
+        <PizzaBlockButton onClick={onClickAddPizza(pizzaObject)} className="button button--add"/> 
       </div>
     </div>
   )
