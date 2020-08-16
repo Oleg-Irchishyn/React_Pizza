@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from "classnames";
 
-const PizzaBlockButton = ({ outline, className, onClick }) => {
+const PizzaBlockButton = ({ outline, className, onClick, addedCountToCart }) => {
   return (
     <div onClick={onClick} className={cn('button', className, {
       'button-outline': outline
@@ -19,7 +19,7 @@ const PizzaBlockButton = ({ outline, className, onClick }) => {
         />
       </svg>
       <span>Добавить</span>
-      <i>2</i>
+      {addedCountToCart && <i>{addedCountToCart}</i>}
     </div>
   )
 }

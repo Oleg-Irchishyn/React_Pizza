@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import PizzaBlockButton from './PizzaBlockButton/PizzaBlockButton';
 
 
-const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza }) => {
+const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza, addedCountToCart }) => {
 
   const availableTypes = ["тонкое", "традиционное"];
   const availableSizes = [26, 30, 40];
@@ -72,7 +72,7 @@ const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza }
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price">от {price} ₽</div>
-        <PizzaBlockButton onClick={handleOnClickAddPizza} className="button button--add" />
+        <PizzaBlockButton onClick={handleOnClickAddPizza} addedCountToCart={addedCountToCart} className="button button--add" />
       </div>
     </div>
   )
@@ -84,7 +84,8 @@ PizzaBlock.propTypes = {
   price: PropTypes.number,
   types: PropTypes.arrayOf(PropTypes.number),
   sizes: PropTypes.arrayOf(PropTypes.number),
-  onClickAddPizza: PropTypes.func
+  onClickAddPizza: PropTypes.func,
+  addedCountToCart: PropTypes.number
 }
 
 PizzaBlock.defaultProps = {
