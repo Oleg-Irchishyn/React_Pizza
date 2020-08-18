@@ -37,7 +37,7 @@ const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems, a
               {...pizza}
               isLoaded={true}
               onClickAddPizza={handleAddPizzaToCart}
-              addedCountToCart={cartItems[pizza.id] && cartItems[pizza.id].length} />
+              addedCountToCart={cartItems[pizza.id] && cartItems[pizza.id].items.length} />
           )) : Array(10).fill(pizzas).map((_, index) => <PizzaPreloader key={index} />)
         }
       </div>

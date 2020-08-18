@@ -3,7 +3,7 @@ import { CartItem } from '../../components';
 import { useSelector } from 'react-redux';
 import { getAllItems, getTotalPrice, getTotalCount } from '../../redux/selectors/cartSelectors';
 
-const Cart = ({ name, type, size }) => {
+const Cart = () => {
   const { items, totalPrice, totalCount } = useSelector((state) => ({
     items: getAllItems(state),
     totalPrice: getTotalPrice(state),
@@ -11,7 +11,7 @@ const Cart = ({ name, type, size }) => {
   }));
 
   const addedPizzas = Object.keys(items).map(key => {
-    return items[key][0]
+    return items[key].items[0]
   })
 
   return (
@@ -37,7 +37,7 @@ const Cart = ({ name, type, size }) => {
             </div>
           </div>
           <div className="content__items">
-            {addedPizzas.map((obj) => <CartItem name={obj.name} type={obj.type} size={obj.size}/>)}
+            {addedPizzas.map((obj) => <CartItem name={obj.name} type={obj.type} size={obj.size} totalPrice={items[obj.id].totalPrice}/>)}
           </div>
           <div className="cart__bottom">
             <div className="cart__bottom-details">
