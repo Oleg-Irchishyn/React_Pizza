@@ -1,6 +1,6 @@
 const ADD_PIZZA_TO_CART = 'react-pizza/cart/ADD_PIZZA_TO_CART';
-const SET_TOTAL_PRICE = 'react-pizza/cart/SET_TOTAL_PRICE';
-const SET_TOTAL_COUNT = 'react-pizza/cart/SET_TOTAL_COUNT';
+const CLEAR_CART = 'react-pizza/cart/CLEAR_CART';
+const REMOVE_CART_ITEM = 'react-pizza/cart/REMOVE_CART_ITEM';
 
 let initialState = {
   items: {},
@@ -15,7 +15,6 @@ const getTotalPrice = arr => {
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PIZZA_TO_CART:
-
       const currentPizzaItems = !state.items[action.payload.id]
         ? [action.payload]
         : [...state.items[action.payload.id].items, action.payload];
@@ -36,18 +35,22 @@ const cartReducer = (state = initialState, action) => {
         totalCount: allPizzas.length,
         totalPrice: totalPrice
       };
-
-    case SET_TOTAL_PRICE:
-      return {
-        ...state,
-        totalPrice: action.price
-      }
-    case SET_TOTAL_COUNT:
-      return {
-        ...state,
-        totalCount: action.count
-      }
-    default:
+      case CLEAR_CART :
+        return {
+          items: {},
+          totalPrice: 0,
+          totalCount: 0
+        }
+        case REMOVE_CART_ITEM:
+          const newCartItems = {
+            ...state.items
+          }
+          delete newCartItems[action.payload]
+          return {
+            ...state,
+            items: newItems
+          }
+      default:
       return state;
   }
 }
@@ -57,14 +60,13 @@ export const addPizzaToCart = (object) => ({
   payload: object
 })
 
-export const setTotalPrice = (price) => ({
-  type: SET_TOTAL_PRICE,
-  price
+export const clearCart = () => ({
+  type: CLEAR_CART
 })
 
-export const setTotalCount = (count) => ({
-  type: SET_TOTAL_COUNT,
-  count
+export const removeCartItem = (id) => ({
+  type: REMOVE_CART_ITEM,
+  payload: id
 })
 
 export default cartReducer;
