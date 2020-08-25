@@ -3,7 +3,7 @@ import {RemoveItemButton} from '../../../components'
 
 const CartItem = ({ id, name, type, size, totalPrice, totalCount, onRemovePizza }) => {
 
-    const handleRemoveClick = () =>{
+    const handleRemoveClick = () => {
         onRemovePizza(id)
     }
     return (
@@ -37,7 +37,7 @@ const CartItem = ({ id, name, type, size, totalPrice, totalCount, onRemovePizza 
             <div className="cart__item-price">
                 <b>{totalPrice} ₽</b>
             </div>
-            <RemoveItemButton onClick={handleRemoveClick} className="cart__item-remove"/>
+            <RemoveItemButton onClick={handleRemoveClick}/>
         </div>
     )
 }

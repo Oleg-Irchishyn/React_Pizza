@@ -55,11 +55,12 @@ const Cart = () => {
             </div>
             <div className="content__items">
               {addedPizzas.map((obj, index) => <CartItem
+                id={obj.id}
                 key={`${obj}_${index}`}
                 name={obj.name} type={obj.type}
                 size={obj.size} totalPrice={items[obj.id].totalPrice}
                 totalCount={items[obj.id].items.length} onRemovePizza={onRemoveItem}
-                />)}
+              />)}
             </div>
             <div className="cart__bottom">
               <div className="cart__bottom-details">
@@ -80,7 +81,7 @@ const Cart = () => {
               </div>
             </div>
           </div> : <div className="cart cart--empty">
-              <h2>Корзина пустая <icon>😕</icon></h2>
+              <h2>Корзина пустая <span>😕</span></h2>
               <p>
                 Вероятней всего, вы не заказывали ещё пиццу.<br />
               Для того, чтобы заказать пиццу, перейди на главную страницу.

@@ -26,31 +26,35 @@ const cartReducer = (state = initialState, action) => {
           totalPrice: getTotalPrice(currentPizzaItems)
         }
       };
-      const items = Object.values(newItems).map(obj => obj.items);
-      const allPizzas = [].concat.apply([], items);
-      const totalPrice = getTotalPrice(allPizzas);
+      const totalCount = Object.keys(newItems).reduce((sum, key) => newItems[key].items.length + sum, 0);
+      const totalPrice = Object.keys(newItems).reduce((sum, key) => newItems[key].totalPrice + sum, 0);
+
       return {
         ...state,
         items: newItems,
-        totalCount: allPizzas.length,
+        totalCount: totalCount,
         totalPrice: totalPrice
       };
-      case CLEAR_CART :
-        return {
-          items: {},
-          totalPrice: 0,
-          totalCount: 0
-        }
-        case REMOVE_CART_ITEM:
-          const newCartItems = {
-            ...state.items
-          }
-          delete newCartItems[action.payload]
-          return {
-            ...state,
-            items: newItems
-          }
-      default:
+    case CLEAR_CART:
+      return {
+        items: {},
+        totalPrice: 0,
+        totalCount: 0
+      }
+    case REMOVE_CART_ITEM:
+      const newCartItems = {
+        ...state.items
+      }
+      const currentTotalPrice = newCartItems[action.payload].totalPrice;
+      const currentTotalCount = newCartItems[action.payload].items.length;
+      delete newCartItems[action.payload]
+      return {
+        ...state,
+        items: newCartItems,
+        totalPrice: state.totalPrice - currentTotalPrice,
+        totalCount: state.totalCount - currentTotalCount
+      }
+    default:
       return state;
   }
 }
