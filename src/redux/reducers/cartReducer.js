@@ -1,6 +1,8 @@
 const ADD_PIZZA_TO_CART = 'react-pizza/cart/ADD_PIZZA_TO_CART';
 const CLEAR_CART = 'react-pizza/cart/CLEAR_CART';
 const REMOVE_CART_ITEM = 'react-pizza/cart/REMOVE_CART_ITEM';
+const PLUS_CART_ITEM = 'react-pizza/cart/PLUS_CART_ITEM';
+const MINUS_CART_ITEM = 'react-pizza/cart/MINUS_CART_ITEM';
 
 let initialState = {
   items: {},
@@ -54,6 +56,45 @@ const cartReducer = (state = initialState, action) => {
         totalPrice: state.totalPrice - currentTotalPrice,
         totalCount: state.totalCount - currentTotalCount
       }
+    case PLUS_CART_ITEM: {
+      const newPlusCartItems = [
+        ...state.items[action.payload].items,
+        state.items[action.payload].items[0]
+      ]
+      const totalCount = Object.keys(newPlusCartItems).reduce((sum, key) => newPlusCartItems[key].items.length + sum, 0);
+      const totalPrice = Object.keys(newPlusCartItems).reduce((sum, key) => newPlusCartItems[key].totalPrice + sum, 0);
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload]: {
+            items: newPlusCartItems,
+            totalPrice: getTotalPrice(newPlusCartItems)
+          }
+        },
+        totalCount,
+        totalPrice
+      }
+    }
+    case MINUS_CART_ITEM: {
+      const oldMinusItems = state.items[action.payload].items;
+      const newMinusCartItems = oldMinusItems.length > 1 ? state.items[action.payload].items.slice(1) : oldMinusItems;
+      const totalCount = Object.keys(newMinusCartItems).reduce((sum, key) => newMinusCartItems[key].items.length + sum, 0);
+      const totalPrice = Object.keys(newMinusCartItems ).reduce((sum, key) => newMinusCartItems[key].totalPrice + sum, 0);
+
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload]: {
+            items: newMinusCartItems,
+            totalPrice: getTotalPrice(newMinusCartItems)
+          }
+        },
+        totalCount,
+        totalPrice 
+      }
+    }
     default:
       return state;
   }
@@ -70,6 +111,16 @@ export const clearCart = () => ({
 
 export const removeCartItem = (id) => ({
   type: REMOVE_CART_ITEM,
+  payload: id
+})
+
+export const plusCartItem = (id) => ({
+  type: PLUS_CART_ITEM,
+  payload: id
+})
+
+export const minusCartItem = (id) => ({
+  type: MINUS_CART_ITEM,
   payload: id
 })
 

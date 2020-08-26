@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getAllItems, getTotalPrice, getTotalCount } from '../../redux/selectors/cartSelectors';
-import { clearCart, removeCartItem } from '../../redux/reducers/cartReducer';
+import { clearCart, removeCartItem, plusCartItem, minusCartItem } from '../../redux/reducers/cartReducer';
 import { CartItem } from '../../components';
 import emptyCartImg from "../../assets/images/empty-cart.png";
 
@@ -29,6 +29,16 @@ const Cart = () => {
       dispatch(removeCartItem(id));
     }
   }
+
+  const onPlusCartItem = (id) => {
+    dispatch(plusCartItem(id));
+  }
+
+
+  const onMinusCartItem = (id) => {
+    dispatch(minusCartItem(id));
+  }
+
 
   return (
     <div className="content">
@@ -60,6 +70,7 @@ const Cart = () => {
                 name={obj.name} type={obj.type}
                 size={obj.size} totalPrice={items[obj.id].totalPrice}
                 totalCount={items[obj.id].items.length} onRemovePizza={onRemoveItem}
+                onPlusItem={onPlusCartItem} onMinusItem={onMinusCartItem}
               />)}
             </div>
             <div className="cart__bottom">
