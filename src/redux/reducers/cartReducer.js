@@ -16,7 +16,7 @@ const getTotalPrice = arr => {
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_PIZZA_TO_CART:
+    case ADD_PIZZA_TO_CART: {
       const currentPizzaItems = !state.items[action.payload.id]
         ? [action.payload]
         : [...state.items[action.payload.id].items, action.payload];
@@ -37,13 +37,14 @@ const cartReducer = (state = initialState, action) => {
         totalCount: totalCount,
         totalPrice: totalPrice
       };
+    }
     case CLEAR_CART:
       return {
         items: {},
         totalPrice: 0,
         totalCount: 0
       }
-    case REMOVE_CART_ITEM:
+    case REMOVE_CART_ITEM: {
       const newCartItems = {
         ...state.items
       }
@@ -56,13 +57,23 @@ const cartReducer = (state = initialState, action) => {
         totalPrice: state.totalPrice - currentTotalPrice,
         totalCount: state.totalCount - currentTotalCount
       }
+    }
     case PLUS_CART_ITEM: {
       const newPlusCartItems = [
         ...state.items[action.payload].items,
         state.items[action.payload].items[0]
       ]
-      const totalCount = Object.keys(newPlusCartItems).reduce((sum, key) => newPlusCartItems[key].items.length + sum, 0);
-      const totalPrice = Object.keys(newPlusCartItems).reduce((sum, key) => newPlusCartItems[key].totalPrice + sum, 0);
+
+      const newItems = {
+        ...state.items,
+        [action.payload]: {
+          items: newPlusCartItems,
+          totalPrice: getTotalPrice(newPlusCartItems)
+        }
+      };
+
+      const totalCount = Object.keys(newItems).reduce((sum, key) => newItems[key].items.length + sum, 0);
+      const totalPrice = Object.keys(newItems).reduce((sum, key) => newItems[key].totalPrice + sum, 0);
       return {
         ...state,
         items: {
@@ -79,20 +90,23 @@ const cartReducer = (state = initialState, action) => {
     case MINUS_CART_ITEM: {
       const oldMinusItems = state.items[action.payload].items;
       const newMinusCartItems = oldMinusItems.length > 1 ? state.items[action.payload].items.slice(1) : oldMinusItems;
-      const totalCount = Object.keys(newMinusCartItems).reduce((sum, key) => newMinusCartItems[key].items.length + sum, 0);
-      const totalPrice = Object.keys(newMinusCartItems ).reduce((sum, key) => newMinusCartItems[key].totalPrice + sum, 0);
+
+      const newItems = {
+        ...state.items,
+        [action.payload]: {
+          items: newMinusCartItems,
+          totalPrice: getTotalPrice(newMinusCartItems)
+        }
+      };
+
+      const totalCount = Object.keys(newItems).reduce((sum, key) => newItems[key].items.length + sum, 0);
+      const totalPrice = Object.keys(newItems).reduce((sum, key) => newItems[key].totalPrice + sum, 0);
 
       return {
         ...state,
-        items: {
-          ...state.items,
-          [action.payload]: {
-            items: newMinusCartItems,
-            totalPrice: getTotalPrice(newMinusCartItems)
-          }
-        },
+        items: newItems,
         totalCount,
-        totalPrice 
+        totalPrice
       }
     }
     default:

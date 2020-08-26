@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getAllItems, getTotalPrice, getTotalCount } from '../../redux/selectors/cartSelectors';
 import { clearCart, removeCartItem, plusCartItem, minusCartItem } from '../../redux/reducers/cartReducer';
-import { CartItem } from '../../components';
+import { CartItem, PayButton } from '../../components';
 import emptyCartImg from "../../assets/images/empty-cart.png";
 
 const Cart = () => {
@@ -34,9 +34,12 @@ const Cart = () => {
     dispatch(plusCartItem(id));
   }
 
-
   const onMinusCartItem = (id) => {
     dispatch(minusCartItem(id));
+  }
+
+  const onClickOrder = () => {
+    console.log("Your order:", items)
   }
 
 
@@ -83,12 +86,11 @@ const Cart = () => {
                   <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7 13L1 6.93015L6.86175 1" stroke="#D3D3D3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-
-                  <span>Вернуться назад</span>
+                  <NavLink to="/">
+                    <span>Вернуться назад</span>
+                  </NavLink>
                 </a>
-                <div className="button pay-btn">
-                  <span>Оплатить сейчас</span>
-                </div>
+                <PayButton onClickOrder={onClickOrder} />
               </div>
             </div>
           </div> : <div className="cart cart--empty">

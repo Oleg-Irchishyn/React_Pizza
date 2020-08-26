@@ -4,4 +4,5 @@ export { default as SortPopup } from './SortPopup/SortPopup';
 export { default as Cart } from './Cart/Cart';
 export { default as CartItem } from './Cart/CartItem/CartItem';
 export { default as RemoveItemButton} from './Cart/CartItem/RemoveItemButton/RemoveItemButton';
+export { default as PayButton} from './Cart/CartItem/PayButton/PayButton';
 export { default as MainContainer } from './Main/Main';
