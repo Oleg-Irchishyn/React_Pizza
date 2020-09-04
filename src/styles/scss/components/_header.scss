@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 .header {
   border-bottom: 1px solid $gray-line;
@@ -27,6 +27,27 @@
 
     p {
       color: #7b7b7b;
+    }
+  }
+
+  .languagepicker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+      color: $black;
+      outline: none;
+      -webkit-appearance: none;
+      background: transparent;
+      cursor: pointer;
+      border: none;
+      margin-left: 10px;
+      font-size: 16px;
+      line-height: 1;
+    }
+    &__item:first-of-type {
+      margin: 0;
     }
   }
 }
