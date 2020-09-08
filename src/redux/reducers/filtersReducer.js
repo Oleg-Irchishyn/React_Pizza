@@ -5,16 +5,16 @@ let initialState = {
   sortBy: 'rating',
   category: null,
   sortItems: [
-    { name: 'popular', type: 'rating' },
-    { name: 'price', type: 'price' },
-    { name: 'alphabet', type: 'name' }
+    { name: 'популярности', type: 'rating' },
+    { name: 'цене', type: 'price' },
+    { name: 'алфавиту', type: 'name' }
   ],
   categoryItems: [
-    'Meat',
-    'Vegetarian',
-    'Grill',
-    'Spicy',
-    'Closed'
+    'Мясные',
+    'Вегетарианские',
+    'Гриль',
+    'Острые',
+    'Зыкрытые'
   ]
 }
 

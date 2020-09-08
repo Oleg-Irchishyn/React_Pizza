@@ -13,10 +13,10 @@ import { Header, Cart, MainContainer } from './components';
 import { getCategory, getSortBy } from './redux/selectors/filtersSelectors';
 
 
-const App = ({ initialized, initializeApp, category, sortBy, setPizzasSuccess}) => {
+const App = ({ initialized, initializeApp, category, sortBy, setPizzasSuccess }) => {
   useEffect(() => {
-     initializeApp();
-     setPizzasSuccess(category, sortBy)
+    initializeApp();
+    setPizzasSuccess(category, sortBy);
   }, [category, sortBy])
 
   if (!initialized) {
