@@ -44,4 +44,12 @@ export const setPizzasSuccess = (category, sortBy) => {
   }
 }
 
+export const setEngPizzasSuccess = (category, sortBy) => {
+  return async (dispatch) => {
+    dispatch(setLoaded(false))
+    let data = await mainAPI.getPizzasEng(category, sortBy);
+    dispatch(setPizzas(data));
+  }
+}
+
 export default pizzasReducer;
