@@ -3,9 +3,11 @@ import { compose, bindActionCreators } from 'redux';
 import *as filtersActions from '../../redux/reducers/filtersReducer';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 const Categories = React.memo(({ items, setCategoty }) => {
   const [activeItem, setActiveItem] = useState(null);
+  const { t } = useTranslation();
 
   const onSelectItem = (index) => {
     setActiveItem(index);
@@ -18,8 +20,8 @@ const Categories = React.memo(({ items, setCategoty }) => {
           className={activeItem === null ? "active" : ""}
           onClick={() => onSelectItem(null)}
         >
-          Все
-      </li>
+          {t('categoryItems.All')}
+        </li>
         {items &&
           items.map((item, index) => (
             <li

@@ -7,16 +7,37 @@ import *as pizzasActions from '../../redux/reducers/pizzasReducer';
 import *as filtersActions from '../../redux/reducers/filtersReducer';
 import *as cartActions from '../../redux/reducers/cartReducer';
 import { getPizzas, isLoading } from '../../redux/selectors/pizzasSelectors';
-import { getCategory, getSortBy, getSortItems, getAllCategories } from '../../redux/selectors/filtersSelectors';
+import { getCategory, getSortBy } from '../../redux/selectors/filtersSelectors';
 import PizzaPreloader from '../common/PizzaPreloader/PizzaPreloader';
 import { getAllItems } from '../../redux/selectors/cartSelectors';
+import { useTranslation } from 'react-i18next';
 
 
 const MainContainer = React.memo(({ ...props }) => {
-  return <Main {...props} />
+  const { t } = useTranslation();
+  const categoryItems = [
+    t('categoryItems.Meat'),
+    t('categoryItems.Vegetarian'),
+    t('categoryItems.Grill'),
+    t('categoryItems.Spicy'),
+    t('categoryItems.Closed')
+  ]
+  const sortItems = [
+    {
+      name: t('sortItemsName.popular'), type: 'rating'
+    },
+    {
+      name: t('sortItemsName.price'), type: 'price'
+    },
+    {
+      name: t('sortItemsName.alphabet'), type: 'name'
+    }
+  ]
+  return <Main {...props} categoryItems={categoryItems} sortItems={sortItems} />
 });
 
 const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems, addPizzaToCart, cartItems }) => {
+  const { t } = useTranslation();
 
   const handleAddPizzaToCart = (object) => {
     addPizzaToCart(object)
@@ -28,7 +49,7 @@ const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems, a
         <Categories items={categoryItems} />
         <SortPopup activeSortType={sortBy} items={sortItems} setSortBy={setSortBy} />
       </div>
-      <h2 className="content__title">Все пиццы</h2>
+      <h2 className="content__title">{t('ContentTitle.title')}</h2>
       <div className="content__items">
         {
           isLoaded ? pizzas.map((pizza) => (
@@ -50,8 +71,6 @@ const mapStateToProps = (state) => ({
   isLoaded: isLoading(state),
   category: getCategory(state),
   sortBy: getSortBy(state),
-  sortItems: getSortItems(state),
-  categoryItems: getAllCategories(state),
   cartItems: getAllItems(state)
 });
 

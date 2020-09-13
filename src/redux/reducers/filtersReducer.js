@@ -1,6 +1,7 @@
 const SET_SORT_BY = 'react-pizza/filters/SET_SORT_BY';
 const SET_CATEGORY = 'react-pizza/filters/SET_CATEGORY';
 
+
 let initialState = {
   sortBy: 'rating',
   category: null,
@@ -9,13 +10,6 @@ let initialState = {
     { name: 'цене', type: 'price' },
     { name: 'алфавиту', type: 'name' }
   ],
-  categoryItems: [
-    'Мясные',
-    'Вегетарианские',
-    'Гриль',
-    'Острые',
-    'Зыкрытые'
-  ]
 }
 
 const filtersReducer = (state = initialState, action) => {

@@ -1,8 +1,27 @@
 {
-    "HeaderTitle": {
-        "1": "Реакт Піца"
-    },
-    "HeaderDescription": {
-        "1": "Найсмачніша піца у цілому світі"
-    }
+  "HeaderTitle": {
+    "1": "Реакт Піца"
+  },
+  "HeaderDescription": {
+    "1": "Найсмачніша піца у цілому світі"
+  },
+  "ContentTitle": {
+    "title": "Усі піци"
+  },
+  "categoryItems": {
+    "All": "Усі",
+    "Meat": "М'ясні",
+    "Vegetarian": "Вегетаріанські",
+    "Grill": "Гриль",
+    "Spicy": "Гострі",
+    "Closed": "Закриті"
+  },
+  "sortItemsName": {
+    "popular": "популярністю",
+    "price": "ціною",
+    "alphabet": "абеткою"
+  },
+  "sortByText": {
+    "text": "Сортувати за"
+  }
 }

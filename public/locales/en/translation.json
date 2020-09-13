@@ -1,8 +1,27 @@
 {
-    "HeaderTitle": {
-        "1": "React Pizza"
-    },
-    "HeaderDescription": {
-        "1": "The most delicious pizza in a world"
-    }
+  "HeaderTitle": {
+    "1": "React Pizza"
+  },
+  "HeaderDescription": {
+    "1": "The most delicious pizza in a world"
+  },
+  "ContentTitle": {
+    "title": "All pizzas"
+  },
+  "categoryItems": {
+    "All": "All",
+    "Meat": "Meat",
+    "Vegetarian": "Vegetarian",
+    "Grill": "Grill",
+    "Spicy": "Spicy",
+    "Closed": "Closed"
+  },
+  "sortItemsName": {
+    "popular": "popular",
+    "price": "price",
+    "alphabet": "alphabet"
+  },
+  "sortByText": {
+    "text": "Sort by"
+  }
 }

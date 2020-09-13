@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 const SortPopup = React.memo(({ items, activeSortType, setSortBy }) => {
+  const { t } = useTranslation();
 
   const onSelectItem = (type) => {
     setVisiblePopUp(false);
@@ -20,9 +22,9 @@ const SortPopup = React.memo(({ items, activeSortType, setSortBy }) => {
   const handleOutsideClick = (e) => {
     const path = e.path || (e.composedPath && e.composedPath());
     if (!path.includes(sortRef.current)) {
-        setVisiblePopUp(false);
+      setVisiblePopUp(false);
     }
-}
+  }
 
   useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);
@@ -46,7 +48,7 @@ const SortPopup = React.memo(({ items, activeSortType, setSortBy }) => {
             fill="#2C2C2C"
           />
         </svg>
-        <b>Сортировка по:</b>
+        <b>{t('sortByText.text')}:</b>
         <span onClick={toggleVisiblePopUp}>{activeLabel}</span>
       </div>
       {visiblePopup && <div className="sort__popup">
