@@ -5,7 +5,7 @@ import *as pizzasActions from '../../../redux/reducers/pizzasReducer';
 import { connect } from 'react-redux';
 import { getCategory, getSortBy } from '../../../redux/selectors/filtersSelectors';
 
-const LanguagePicker = ({ category, sortBy, setEngPizzasSuccess, setPizzasSuccess }) => {
+const LanguagePicker = ({ category, sortBy, setEngPizzasSuccess,  setUkrPizzasSuccess, setPizzasSuccess}) => {
   const { i18n } = useTranslation();
   const handleClick = (lang) => {
     i18n.changeLanguage(lang);
@@ -20,7 +20,10 @@ const LanguagePicker = ({ category, sortBy, setEngPizzasSuccess, setPizzasSucces
         }}>
           English
          </button>
-        <button className="languagepicker__item" onClick={() => handleClick('uk')}>
+        <button className="languagepicker__item" onClick={() => {
+          handleClick('uk');
+          setUkrPizzasSuccess(category, sortBy);
+        }}>
           Українська
          </button>
         <button className="languagepicker__item" onClick={() => {

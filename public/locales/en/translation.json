@@ -23,5 +23,20 @@
   },
   "sortByText": {
     "text": "Sort by"
+  },
+  "cart": {
+    "title": "Cart",
+    "clearMessage": "Clear cart",
+    "pizzasTotalText": "Total Count",
+    "pizzasTotalAmountText": "count",
+    "orderSumText": "Total price",
+    "backToMainText": "Back",
+    "emptyCartTitile": "Cart Empty",
+    "emptyCartMessage": "You have not ordered pizza, yet. In case you want to order one, please return to the main page",
+    "confirmMessage": {
+      "1": "Do you want to clear your cart?",
+      "2": "Do you want to remove pizza?"
+    },
+    "yourOrderMessage": "Your order:"
   }
 }

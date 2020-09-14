@@ -1,9 +1,9 @@
 import React, { Suspense } from 'react';
-import PreloaderImg from '../components/common/Preloader/PreloaderImg';
+import Preloader from '../components/common/Preloader/Preloader';
 
 export const withSuspense = (Component) => {
   return (props) => {
-    return <Suspense fallback={<PreloaderImg />}>
+    return <Suspense fallback={<Preloader />}>
       <Component {...props} />
     </Suspense>
   }

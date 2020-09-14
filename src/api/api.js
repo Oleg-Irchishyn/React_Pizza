@@ -15,7 +15,11 @@ export const mainAPI = {
   },
   getPizzasEng: (category, sortBy) => {
     return instance.get(`pizzasEng?${category !== null ? `category=${category}` : null}&_sort=${sortBy}&_order=asc`).then(response => {
-      /*return response.data.pizzas;*/
+      return response.data;
+    });
+  },
+  getPizzasUkr: (category, sortBy) => {
+    return instance.get(`pizzasUkr?${category !== null ? `category=${category}` : null}&_sort=${sortBy}&_order=asc`).then(response => {
       return response.data;
     });
   }

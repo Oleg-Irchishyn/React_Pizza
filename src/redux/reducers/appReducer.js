@@ -1,4 +1,4 @@
-import { setPizzasSuccess, setEngPizzasSuccess } from "./pizzasReducer";
+import { setPizzasSuccess, setEngPizzasSuccess, setUkrPizzasSuccess } from "./pizzasReducer";
 
 const INITIALIZED_SUCCESS = 'react-pizza/app/INITIALIZED_SUCCESS';
 
@@ -25,8 +25,9 @@ export const initializedSuccess = () => ({
 export const initializeApp = () => (dispatch) => {
   let promise = dispatch(setPizzasSuccess());
   let secondPromise = dispatch(setEngPizzasSuccess());
+  let thirdPromise = dispatch(  setUkrPizzasSuccess());
 
-  Promise.all([promise, secondPromise])
+  Promise.all([promise, secondPromise, thirdPromise])
     .then(() => {
       dispatch(initializedSuccess());
     })
