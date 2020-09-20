@@ -5,6 +5,10 @@ import { useSelector } from 'react-redux';
 import { getTotalPrice, getTotalCount } from '../../../redux/selectors/cartSelectors';
 
 const Button = ({ outline, className }) => {
+  React.useEffect(() => {
+    localStorage.setItem("cartItemsTotalPrice", JSON.stringify(totalPrice));
+    localStorage.setItem("cartItemsTotalCount", JSON.stringify(totalCount));
+  })
   const { totalPrice, totalCount } = useSelector((state) => ({
     totalPrice: getTotalPrice(state),
     totalCount: getTotalCount(state)

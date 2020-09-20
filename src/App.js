@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose, bindActionCreators } from 'redux';
 import *as pizzasActions from './redux/reducers/pizzasReducer';
-import PropTypes from 'prop-types';
 import { Header, MainContainer } from './components';
 import { getCategory, getSortBy } from './redux/selectors/filtersSelectors';
 import { withSuspense } from './hoc/WithSuspense';
@@ -37,11 +36,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   ...bindActionCreators(pizzasActions, dispatch)
 })
-
-App.propTypes = {
-  initialized: PropTypes.bool.isRequired,
-  initializeApp: PropTypes.func.isRequired
-}
 
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),

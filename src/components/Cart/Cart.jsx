@@ -8,6 +8,9 @@ import emptyCartImg from "../../assets/images/empty-cart.png";
 import { useTranslation } from 'react-i18next';
 
 const Cart = () => {
+  React.useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(items));
+  })
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const { items, totalPrice, totalCount } = useSelector((state) => ({

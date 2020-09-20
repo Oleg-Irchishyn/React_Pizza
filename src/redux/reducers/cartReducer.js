@@ -5,9 +5,9 @@ const PLUS_CART_ITEM = 'react-pizza/cart/PLUS_CART_ITEM';
 const MINUS_CART_ITEM = 'react-pizza/cart/MINUS_CART_ITEM';
 
 let initialState = {
-  items: {},
-  totalPrice: 0,
-  totalCount: 0
+  items: JSON.parse(localStorage.getItem('cartItems')) || {},
+  totalPrice: JSON.parse(localStorage.getItem('cartItemsTotalPrice')) || 0,
+  totalCount: JSON.parse(localStorage.getItem('cartItemsTotalCount')) || 0
 }
 
 const getTotalPrice = arr => {
