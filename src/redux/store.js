@@ -1,5 +1,4 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
-import appReducer from "./reducers/appReducer";
 import thunkMiddleware from "redux-thunk";
 import logger from "redux-logger"
 import pizzasReducer from "./reducers/pizzasReducer";
@@ -8,7 +7,6 @@ import cartReducer from "./reducers/cartReducer";
 
 
 let rootReducer = combineReducers({
-  app: appReducer,
   pizzas: pizzasReducer,
   filters: filtersReducer,
   cart: cartReducer

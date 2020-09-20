@@ -1,7 +1,9 @@
 import React from 'react';
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 
 const PizzaBlockButton = ({ outline, className, onClick, addedCountToCart }) => {
+  const { t } = useTranslation();
   return (
     <div onClick={onClick} className={cn('button', className, {
       'button-outline': outline
@@ -18,7 +20,7 @@ const PizzaBlockButton = ({ outline, className, onClick, addedCountToCart }) => 
           fill="white"
         />
       </svg>
-      <span>Добавить</span>
+      <span>{t('singlePizza.buttonText')}</span>
       {addedCountToCart && <i>{addedCountToCart}</i>}
     </div>
   )

@@ -31,12 +31,20 @@
     "pizzasTotalAmountText": "шт",
     "orderSumText": "Загальна сума",
     "backToMainText": "Повернутись",
-    "emptyCartTitile": "Пуста корзина",
+    "emptyCartTitile": "Порожня корзина",
     "emptyCartMessage": "Мабуть, Ви ще не зробили замовлення. Для того, щоб замовити піцу(и), будь-ласка, поверніться на головну сторінку",
     "confirmMessage": {
       "1": "Ви дійсно бажаєте очистити корзину?",
       "2": "Вы дійсно бажаєте видалити піцу?"
     },
-    "yourOrderMessage": "Ваше замовлення:"
+    "yourOrderMessage": "Ваше замовлення:",
+    "cartButtonText": "Сплатити зараз"
+  },
+  "singlePizza": {
+    "sizeText": "см.",
+    "sizetypeFirst": "тонке",
+    "sizetypeSecond": "пишне",
+    "priceText": "від",
+    "buttonText": "Додати"
   }
 }

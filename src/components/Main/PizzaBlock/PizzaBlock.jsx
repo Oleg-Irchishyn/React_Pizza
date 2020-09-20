@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import PizzaBlockButton from './PizzaBlockButton/PizzaBlockButton';
+import { useTranslation } from 'react-i18next';
 
 
 const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza, addedCountToCart }) => {
+  const { t } = useTranslation();
+  let thin = t('singlePizza.sizetypeFirst');
+  let fatHeaded = t('singlePizza.sizetypeSecond');
 
-  const availableTypes = ["тонкое", "традиционное"];
+  const availableTypes = [thin, fatHeaded];
   const availableSizes = [26, 30, 40];
 
   const [activeType, setActiveType] = useState(types[0]);
@@ -65,13 +69,13 @@ const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza, 
               })}
               onClick={() => onSelectSize(index)}
             >
-              {size} см.
+              {size} {t('singlePizza.sizeText')}
             </li>
           ))}
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от {price} ₽</div>
+        <div className="pizza-block__price"> {t('singlePizza.priceText')} {price} ₴</div>
         <PizzaBlockButton onClick={handleOnClickAddPizza} addedCountToCart={addedCountToCart} className="button button--add" />
       </div>
     </div>

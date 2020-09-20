@@ -96,10 +96,10 @@ const Cart = () => {
               </div>
             </div>
           </div> : <div className="cart cart--empty">
-              <h2>{t('cart.emptyCartTitile')}<span>😕</span></h2> 
+              <h2>{t('cart.emptyCartTitile')}<span>😕</span></h2>
               <p>
-              {t('cart.emptyCartMessage')}
-            </p>
+                {t('cart.emptyCartMessage')}
+              </p>
               <img src={emptyCartImg} alt="Empty cart" />
               <NavLink to="/" className="button button--black">
                 <span>{t('cart.backToMainText')}</span>

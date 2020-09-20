@@ -37,6 +37,14 @@
       "1": "Вы действительно хотите очистить корзину?",
       "2": "Вы хотите удалить пиццу?"
     },
-    "yourOrderMessage": "Ваш заказ:"
+    "yourOrderMessage": "Ваш заказ:",
+    "cartButtonText": "Оплатить сейчас"
+  },
+  "singlePizza": {
+    "sizeText": "см.",
+    "sizetypeFirst": "тонкое",
+    "sizetypeSecond": "толстое",
+    "priceText": "от",
+    "buttonText": "Добавить"
   }
 }
