@@ -91,7 +91,7 @@
     "json-server": "npx json-server --watch public/db.json --port=3001",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "npm run server"
+    "start": "node server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
