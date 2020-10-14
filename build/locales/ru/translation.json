@@ -1,0 +1,50 @@
+{
+  "HeaderTitle": {
+    "1": "Реакт Пицца"
+  },
+  "HeaderDescription": {
+    "1": "Самая вкусная Пицца в мире"
+  },
+  "ContentTitle": {
+    "title": "Все пиццы"
+  },
+  "categoryItems": {
+    "All": "Все",
+    "Meat": "Мясные",
+    "Vegetarian": "Вегетарианские",
+    "Grill": "Гриль",
+    "Spicy": "Острые",
+    "Closed": "Закрытые"
+  },
+  "sortItemsName": {
+    "popular": "популярности",
+    "price": "цене",
+    "alphabet": "алфавиту"
+  },
+  "sortByText": {
+    "text": "Сортировать по"
+  },
+  "cart": {
+    "title": "Корзина",
+    "clearMessage": "Очистить корзину",
+    "pizzasTotalText": "Всего пицц",
+    "pizzasTotalAmountText": "шт",
+    "orderSumText": "Общая стоимость",
+    "backToMainText": "Вернуться",
+    "emptyCartTitile": "Пустая корзина",
+    "emptyCartMessage": "Вероятно, Вы еще не оформили заказ. Чтобы заказть пиццу(ы), пожалуйста, вернитесь на главную страницу",
+    "confirmMessage": {
+      "1": "Вы действительно хотите очистить корзину?",
+      "2": "Вы хотите удалить пиццу?"
+    },
+    "yourOrderMessage": "Ваш заказ:",
+    "cartButtonText": "Оплатить сейчас"
+  },
+  "singlePizza": {
+    "sizeText": "см.",
+    "sizetypeFirst": "тонкое",
+    "sizetypeSecond": "толстое",
+    "priceText": "от",
+    "buttonText": "Добавить"
+  }
+}

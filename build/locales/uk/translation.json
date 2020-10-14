@@ -1,0 +1,50 @@
+{
+  "HeaderTitle": {
+    "1": "Реакт Піца"
+  },
+  "HeaderDescription": {
+    "1": "Найсмачніша піца у цілому світі"
+  },
+  "ContentTitle": {
+    "title": "Усі піци"
+  },
+  "categoryItems": {
+    "All": "Усі",
+    "Meat": "М'ясні",
+    "Vegetarian": "Вегетаріанські",
+    "Grill": "Гриль",
+    "Spicy": "Гострі",
+    "Closed": "Закриті"
+  },
+  "sortItemsName": {
+    "popular": "популярністю",
+    "price": "ціною",
+    "alphabet": "абеткою"
+  },
+  "sortByText": {
+    "text": "Сортувати за"
+  },
+  "cart": {
+    "title": "Корзина",
+    "clearMessage": "Очистити корзину",
+    "pizzasTotalText": "Всього піц",
+    "pizzasTotalAmountText": "шт",
+    "orderSumText": "Загальна сума",
+    "backToMainText": "Повернутись",
+    "emptyCartTitile": "Порожня корзина",
+    "emptyCartMessage": "Мабуть, Ви ще не зробили замовлення. Для того, щоб замовити піцу(и), будь-ласка, поверніться на головну сторінку",
+    "confirmMessage": {
+      "1": "Ви дійсно бажаєте очистити корзину?",
+      "2": "Вы дійсно бажаєте видалити піцу?"
+    },
+    "yourOrderMessage": "Ваше замовлення:",
+    "cartButtonText": "Сплатити зараз"
+  },
+  "singlePizza": {
+    "sizeText": "см.",
+    "sizetypeFirst": "тонке",
+    "sizetypeSecond": "пишне",
+    "priceText": "від",
+    "buttonText": "Додати"
+  }
+}
