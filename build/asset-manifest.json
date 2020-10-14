@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/React_Pizza/static/css/main.1b3ed8d0.chunk.css",
-    "main.js": "/React_Pizza/static/js/main.66afdd21.chunk.js",
-    "main.js.map": "/React_Pizza/static/js/main.66afdd21.chunk.js.map",
+    "main.js": "/React_Pizza/static/js/main.eb3866d0.chunk.js",
+    "main.js.map": "/React_Pizza/static/js/main.eb3866d0.chunk.js.map",
     "runtime-main.js": "/React_Pizza/static/js/runtime-main.5955c7ae.js",
     "runtime-main.js.map": "/React_Pizza/static/js/runtime-main.5955c7ae.js.map",
     "static/css/2.312b1a89.chunk.css": "/React_Pizza/static/css/2.312b1a89.chunk.css",
-    "static/js/2.e2f5da23.chunk.js": "/React_Pizza/static/js/2.e2f5da23.chunk.js",
-    "static/js/2.e2f5da23.chunk.js.map": "/React_Pizza/static/js/2.e2f5da23.chunk.js.map",
+    "static/js/2.a400d2c7.chunk.js": "/React_Pizza/static/js/2.a400d2c7.chunk.js",
+    "static/js/2.a400d2c7.chunk.js.map": "/React_Pizza/static/js/2.a400d2c7.chunk.js.map",
     "index.html": "/React_Pizza/index.html",
-    "precache-manifest.08147187c45678e8555341a57f9a8e5c.js": "/React_Pizza/precache-manifest.08147187c45678e8555341a57f9a8e5c.js",
+    "precache-manifest.01022b9244d8cf13494e626170f8457b.js": "/React_Pizza/precache-manifest.01022b9244d8cf13494e626170f8457b.js",
     "service-worker.js": "/React_Pizza/service-worker.js",
     "static/css/2.312b1a89.chunk.css.map": "/React_Pizza/static/css/2.312b1a89.chunk.css.map",
     "static/css/main.1b3ed8d0.chunk.css.map": "/React_Pizza/static/css/main.1b3ed8d0.chunk.css.map",
-    "static/js/2.e2f5da23.chunk.js.LICENSE.txt": "/React_Pizza/static/js/2.e2f5da23.chunk.js.LICENSE.txt",
+    "static/js/2.a400d2c7.chunk.js.LICENSE.txt": "/React_Pizza/static/js/2.a400d2c7.chunk.js.LICENSE.txt",
     "static/media/app.scss": "/React_Pizza/static/media/ProximaNova-Regular.b7c51278.eot",
     "static/media/empty-cart.png": "/React_Pizza/static/media/empty-cart.ceb2faf0.png",
     "static/media/font-awesome.min.css": "/React_Pizza/static/media/fontawesome-webfont.fee66e71.woff",
@@ -23,8 +23,8 @@
   "entrypoints": [
     "static/js/runtime-main.5955c7ae.js",
     "static/css/2.312b1a89.chunk.css",
-    "static/js/2.e2f5da23.chunk.js",
+    "static/js/2.a400d2c7.chunk.js",
     "static/css/main.1b3ed8d0.chunk.css",
-    "static/js/main.66afdd21.chunk.js"
+    "static/js/main.eb3866d0.chunk.js"
   ]
 }
