@@ -18,6 +18,7 @@
     "camelcase": "^5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "classnames": "^2.2.6",
+    "concurrently": "^5.3.0",
     "css-loader": "3.4.2",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
@@ -82,13 +83,14 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "set PORT=3000 && node scripts/start.js",
+    "start-local": "set PORT=3000 && node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "server": "node server.js",
     "json-server": "npx json-server --watch public/db.json --port=3001",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "start": "concurrently --kill-others \"npm run start-local\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": "react-app"

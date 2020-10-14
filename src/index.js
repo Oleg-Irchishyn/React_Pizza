@@ -10,10 +10,10 @@ import './i18next';
 
 
 ReactDOM.render(
-  <BrowserRouter /*basename={process.env.PUBLIC_URL} - это строка нужна для BrowserRouter для github pages*/>
+  <HashRouter /*basename={process.env.PUBLIC_URL} - это строка нужна для BrowserRouter для github pages*/>
     <Provider store={store}>
       <Suspense fallback={<Preloader />}>
         <App />
       </Suspense>
     </Provider>
-  </BrowserRouter>, document.getElementById('root'));
+  </HashRouter>, document.getElementById('root'));
