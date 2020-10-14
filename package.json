@@ -83,14 +83,15 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start-local": "set PORT=3000 && node scripts/start.js",
+    "start-dev-server": "concurrently --kill-others \"npm run dev-server\" \"npm run server\"",
+    "dev-server": "set PORT=3000 && node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "server": "node server.js",
     "json-server": "npx json-server --watch public/db.json --port=3001",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "concurrently --kill-others \"npm run start-local\" \"npm run server\""
+    "start": "npm run server"
   },
   "eslintConfig": {
     "extends": "react-app"
