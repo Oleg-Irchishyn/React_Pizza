@@ -2,7 +2,7 @@
   "name": "react-pizza-shop",
   "version": "0.1.0",
   "private": true,
-  "homepage": " https://oleg-irchishyn.github.io/React_Pizza",
+  "homepage": " https://react-pizza-eshop.herokuapp.com",
   "dependencies": {
     "@babel/core": "7.8.4",
     "@svgr/webpack": "4.3.3",
