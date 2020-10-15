@@ -85,13 +85,10 @@
   "scripts": {
     "start-dev-server": "concurrently --kill-others \"npm run dev-server\" \"npm run server\"",
     "dev-server": "set PORT=3000 && node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
     "server": "node server.js",
-    "json-server": "npx json-server --watch public/db.json --port=3001",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app"

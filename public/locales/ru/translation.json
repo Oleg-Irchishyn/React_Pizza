@@ -40,6 +40,10 @@
     "yourOrderMessage": "Ваш заказ:",
     "cartButtonText": "Оплатить сейчас"
   },
+  "cartItem": {
+    "dough": "тесто",
+    "size": "см."
+  },
   "singlePizza": {
     "sizeText": "см.",
     "sizetypeFirst": "тонкое",

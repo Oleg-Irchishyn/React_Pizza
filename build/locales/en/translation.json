@@ -40,6 +40,10 @@
     "yourOrderMessage": "Your order:",
     "cartButtonText": "Pay now"
   },
+  "cartItem": {
+    "dough": "dough",
+    "size": "sm."
+  },
   "singlePizza": {
     "sizeText": "sm.",
     "sizetypeFirst": "thin-crust",

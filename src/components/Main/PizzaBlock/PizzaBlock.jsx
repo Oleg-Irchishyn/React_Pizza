@@ -30,8 +30,8 @@ const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza, 
       name,
       imageUrl,
       price,
-      size: sizes[availableSizes],
-      type: types[availableTypes]
+      size: availableSizes[activeSize],
+      type: availableTypes[activeType]
     }
     onClickAddPizza(pizzaObject)
   }

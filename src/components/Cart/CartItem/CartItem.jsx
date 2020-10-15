@@ -1,7 +1,9 @@
-import React from 'react'
-import { RemoveItemButton } from '../../../components'
+import React from 'react';
+import { RemoveItemButton } from '../../../components';
+import { useTranslation } from 'react-i18next';
 
 const CartItem = ({ id, name, type, size, totalPrice, totalCount, onRemovePizza, onPlusItem, onMinusItem }) => {
+  const { t } = useTranslation();
 
   const handleRemoveClick = () => {
     onRemovePizza(id)
@@ -26,7 +28,7 @@ const CartItem = ({ id, name, type, size, totalPrice, totalCount, onRemovePizza,
       </div>
       <div className="cart__item-info">
         <h3>{name}</h3>
-        <p>{type} тесто, {size} см.</p>
+        <p>{type} {t('cartItem.dough')}, {size} {t('cartItem.size')}</p>
       </div>
       <div className="cart__item-count">
         <div onClick={handleMinusCartItem} className="button button--outline button--circle cart__item-count-minus">
@@ -46,7 +48,7 @@ const CartItem = ({ id, name, type, size, totalPrice, totalCount, onRemovePizza,
         </div>
       </div>
       <div className="cart__item-price">
-        <b>{totalPrice} ₽</b>
+        <b>{totalPrice} ₴</b>
       </div>
       <RemoveItemButton onClick={handleRemoveClick} />
     </div>
