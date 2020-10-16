@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Icon 1 */
+
+.header__burger {
+    display: block;
+    width: 60px;
+    height: 45px;
+    position: relative;
+    margin: 0 auto;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    span {
+        display: block;
+        position: absolute;
+        height: 9px;
+        width: 100%;
+        background: $orange;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+    }
+    span:nth-child(1) {
+        top: 0px;
+    }
+    span:nth-child(2) {
+        top: 18px;
+    }
+    span:nth-child(3) {
+        top: 36px;
+    }
+    &.open {
+        span:nth-child(1) {
+            top: 18px;
+            transform: rotate(135deg);
+        }
+        span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+        span:nth-child(3) {
+            top: 18px;
+            transform: rotate(-135deg);
+        }
+    }
+    @media screen and (min-width: 992px) {
+        display: none;
+    }
+}

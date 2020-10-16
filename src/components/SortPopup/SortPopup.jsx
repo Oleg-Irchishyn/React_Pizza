@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import cn from "classnames";
 import { useTranslation } from 'react-i18next';
 
-const SortPopup = React.memo(({ items, activeSortType, setSortBy }) => {
+const SortPopup = React.memo(({ items, activeSortType, setSortBy, visibleComponent }) => {
   const { t } = useTranslation();
 
   const onSelectItem = (type) => {
@@ -33,7 +34,9 @@ const SortPopup = React.memo(({ items, activeSortType, setSortBy }) => {
   return (
     <div
       ref={sortRef}
-      className="sort"
+      className={cn('sort', {
+        'visible': visibleComponent 
+      })}
     >
       <div className="sort__label">
         <svg className={visiblePopup ? 'rotated' : ''}

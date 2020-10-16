@@ -4,12 +4,14 @@ import logger from "redux-logger"
 import pizzasReducer from "./reducers/pizzasReducer";
 import filtersReducer from "./reducers/filtersReducer";
 import cartReducer from "./reducers/cartReducer";
+import headerReducer from "./reducers/headerReducer";
 
 
 let rootReducer = combineReducers({
   pizzas: pizzasReducer,
   filters: filtersReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  header: headerReducer
 });
 
 const middlewares = [thunkMiddleware, logger]

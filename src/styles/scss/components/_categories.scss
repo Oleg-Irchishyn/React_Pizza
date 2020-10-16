@@ -1,6 +1,7 @@
 @import 'variables';
 
 .categories {
+  display: block;
   ul {
     display: flex;
 
@@ -27,5 +28,11 @@
         color: #fff;
       }
     }
+  }
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+  &.visible {
+    display: block;
   }
 }

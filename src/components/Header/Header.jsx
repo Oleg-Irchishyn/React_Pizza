@@ -3,7 +3,7 @@ import logoSvg from "../../assets/images/pizza-logo.svg";
 import Button from './Button/Button';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { LanguagePicker } from '../../components';
+import { LanguagePicker, Burger } from '../../components';
 
 const Header = () => {
   const { t } = useTranslation();
@@ -19,6 +19,7 @@ const Header = () => {
             </div>
           </div>
         </NavLink>
+        <Burger />
         <LanguagePicker />
         <Button outline className={"button--cart"} />
       </div>

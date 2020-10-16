@@ -18,19 +18,19 @@ const LanguagePicker = ({ category, sortBy, setEngPizzasSuccess,  setUkrPizzasSu
           handleClick('en');
           setEngPizzasSuccess(category, sortBy);
         }}>
-          English
+          Eng
          </button>
         <button className="languagepicker__item" onClick={() => {
           handleClick('uk');
           setUkrPizzasSuccess(category, sortBy);
         }}>
-          Українська
+          Укр
          </button>
         <button className="languagepicker__item" onClick={() => {
           handleClick('ru');
           setPizzasSuccess(category, sortBy);
         }}>
-          Русский
+          Рус
          </button>
       </nav>
     </div>

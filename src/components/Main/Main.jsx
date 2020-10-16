@@ -11,6 +11,7 @@ import { getCategory, getSortBy } from '../../redux/selectors/filtersSelectors';
 import PizzaPreloader from '../common/PizzaPreloader/PizzaPreloader';
 import { getAllItems } from '../../redux/selectors/cartSelectors';
 import { useTranslation } from 'react-i18next';
+import { toggleBurgerState } from '../../redux/selectors/headerSelectors';
 
 
 const MainContainer = React.memo(({ ...props }) => {
@@ -36,7 +37,7 @@ const MainContainer = React.memo(({ ...props }) => {
   return <Main {...props} categoryItems={categoryItems} sortItems={sortItems} />
 });
 
-const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems, addPizzaToCart, cartItems }) => {
+const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems, addPizzaToCart, cartItems, openedBurger }) => {
   const { t } = useTranslation();
 
   const handleAddPizzaToCart = (object) => {
@@ -46,8 +47,8 @@ const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems, a
   return (
     <div className="container">
       <div className="content__top">
-        <Categories items={categoryItems} />
-        <SortPopup activeSortType={sortBy} items={sortItems} setSortBy={setSortBy} />
+       <Categories visibleComponent={openedBurger} items={categoryItems} />
+        <SortPopup visibleComponent={openedBurger} activeSortType={sortBy} items={sortItems} setSortBy={setSortBy} />
       </div>
       <h2 className="content__title">{t('ContentTitle.title')}</h2>
       <div className="content__items">
@@ -71,7 +72,8 @@ const mapStateToProps = (state) => ({
   isLoaded: isLoading(state),
   category: getCategory(state),
   sortBy: getSortBy(state),
-  cartItems: getAllItems(state)
+  cartItems: getAllItems(state),
+  openedBurger: toggleBurgerState(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

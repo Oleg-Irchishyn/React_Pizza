@@ -1,5 +1,6 @@
 export { default as Header } from './Header/Header';
 export { default as LanguagePicker} from './Header/LanguagePicker/LanguagePicker';
+export { default as Burger} from './Header/Burger/Burger';
 export { default as Categories } from './Categories/Categories';
 export { default as SortPopup } from './SortPopup/SortPopup';
 export { default as Cart } from './Cart/Cart';

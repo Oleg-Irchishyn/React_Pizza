@@ -3,9 +3,10 @@ import { compose, bindActionCreators } from 'redux';
 import *as filtersActions from '../../redux/reducers/filtersReducer';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import cn from "classnames";
 import { useTranslation } from 'react-i18next';
 
-const Categories = React.memo(({ items, setCategoty }) => {
+const Categories = React.memo(({ items, setCategoty, visibleComponent }) => {
   const [activeItem, setActiveItem] = useState(null);
   const { t } = useTranslation();
 
@@ -14,7 +15,11 @@ const Categories = React.memo(({ items, setCategoty }) => {
     setCategoty(index)
   }
   return (
-    <div className="categories">
+    <div 
+    className={cn('categories', {
+      'visible': visibleComponent 
+    })}
+    >
       <ul>
         <li
           className={activeItem === null ? "active" : ""}

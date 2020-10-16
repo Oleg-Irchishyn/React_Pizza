@@ -1,6 +1,7 @@
 @import "variables";
 
 .sort {
+  display: block;
   position: relative;
   &__label {
     display: flex;
@@ -54,5 +55,11 @@
         }
       }
     }
+  }
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+  &.visible {
+    display: block;
   }
 }
