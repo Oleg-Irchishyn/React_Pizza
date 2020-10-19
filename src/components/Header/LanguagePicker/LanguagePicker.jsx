@@ -12,7 +12,7 @@ const LanguagePicker = ({ category, sortBy, setEngPizzasSuccess,  setUkrPizzasSu
   }
 
   return (
-    <div>
+    <div className="languagepicker__wrapper">
       <nav className="languagepicker">
         <button className="languagepicker__item" onClick={() => {
           handleClick('en');

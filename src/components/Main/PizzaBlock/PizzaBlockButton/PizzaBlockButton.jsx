@@ -2,11 +2,11 @@ import React from 'react';
 import cn from "classnames";
 import { useTranslation } from 'react-i18next';
 
-const PizzaBlockButton = ({ outline, className, onClick, addedCountToCart }) => {
+const PizzaBlockButton = ({ outline, onClick, addedCountToCart }) => {
   const { t } = useTranslation();
   return (
-    <div onClick={onClick} className={cn('button', className, {
-      'button-outline': outline
+    <div onClick={onClick} className={cn('button', 'button--add', {
+      'button--outline': outline
     })}>
       <svg
         width="12"

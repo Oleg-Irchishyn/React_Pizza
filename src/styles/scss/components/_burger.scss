@@ -10,10 +10,15 @@
     width: 60px;
     height: 45px;
     position: relative;
-    margin: 0 auto;
     transform: rotate(0deg);
     transition: 0.5s ease-in-out;
     cursor: pointer;
+    @media screen and (max-width: 575px) {
+        order: 3;
+      }
+      @media screen and (min-width: 576px) and (max-width: 767px) {
+        order: 3;
+      }
     span {
         display: block;
         position: absolute;

@@ -1,9 +1,15 @@
 @import 'variables';
 
 .categories {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 80%;
+  width: 100%;
   ul {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
 
     li {
       background-color: #f9f9f9;
@@ -14,6 +20,11 @@
       cursor: pointer;
       transition: background-color 0.1s ease-in-out;
       @include noselect();
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+       margin-bottom: 30px;
+       width: 25%;
+       text-align: center;
+      }
 
       &:hover {
         background-color: darken(#f9f9f9, 2%);
@@ -27,6 +38,12 @@
         background-color: #282828;
         color: #fff;
       }
+    }
+    li:last-of-type {
+      margin: 0;
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        margin-bottom: 30px;
+       }
     }
   }
   @media screen and (max-width: 991px) {

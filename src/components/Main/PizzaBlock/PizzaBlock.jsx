@@ -76,7 +76,7 @@ const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza, 
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price"> {t('singlePizza.priceText')} {price} ₴</div>
-        <PizzaBlockButton onClick={handleOnClickAddPizza} addedCountToCart={addedCountToCart} className="button button--add" />
+        <PizzaBlockButton onClick={handleOnClickAddPizza} addedCountToCart={addedCountToCart} outline/>
       </div>
     </div>
   )

@@ -4,6 +4,7 @@ import Button from './Button/Button';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LanguagePicker, Burger } from '../../components';
+import { Route } from 'react-router-dom';
 
 const Header = () => {
   const { t } = useTranslation();
@@ -19,7 +20,9 @@ const Header = () => {
             </div>
           </div>
         </NavLink>
-        <Burger />
+        <Route path="/" exact>
+          <Burger />
+        </Route>
         <LanguagePicker />
         <Button outline className={"button--cart"} />
       </div>
