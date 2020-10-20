@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { compose, bindActionCreators } from 'redux';
 import *as filtersActions from '../../redux/reducers/filtersReducer';
 import { connect } from 'react-redux';
@@ -6,13 +6,23 @@ import PropTypes from 'prop-types';
 import cn from "classnames";
 import { useTranslation } from 'react-i18next';
 
+let anchor;
 const Categories = React.memo(({ items, setCategoty, visibleComponent }) => {
+  useEffect(() => {
+    anchor = document.querySelector('#content__items');
+  }, [])
+
   const [activeItem, setActiveItem] = useState(null);
   const { t } = useTranslation();
 
   const onSelectItem = (index) => {
     setActiveItem(index);
     setCategoty(index)
+    anchor.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'start'
+    });
   }
   return (
     <div 

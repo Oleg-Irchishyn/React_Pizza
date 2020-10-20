@@ -3,12 +3,18 @@ import PropTypes from 'prop-types';
 import cn from "classnames";
 import { useTranslation } from 'react-i18next';
 
+let anchor;
 const SortPopup = React.memo(({ items, activeSortType, setSortBy, visibleComponent }) => {
   const { t } = useTranslation();
 
   const onSelectItem = (type) => {
     setVisiblePopUp(false);
     setSortBy(type);
+    anchor.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'start'
+    });
   }
 
   const activeLabel = items.find(obj => obj.type === activeSortType).name;
@@ -28,6 +34,7 @@ const SortPopup = React.memo(({ items, activeSortType, setSortBy, visibleCompone
   }
 
   useEffect(() => {
+    anchor = document.querySelector('#content__items');
     document.body.addEventListener('click', handleOutsideClick);
   }, [])
 

@@ -51,7 +51,7 @@ const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems, a
         <SortPopup visibleComponent={openedBurger} activeSortType={sortBy} items={sortItems} setSortBy={setSortBy} />
       </div>
       <h2 className="content__title">{t('ContentTitle.title')}</h2>
-      <div className="content__items">
+      <div className="content__items" id="content__items">
         {
           isLoaded ? pizzas.map((pizza) => (
             <PizzaBlock

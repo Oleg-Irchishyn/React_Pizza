@@ -1,15 +1,25 @@
-@import 'variables';
+@import "variables";
 
 .categories {
   display: flex;
   flex-wrap: wrap;
   max-width: 80%;
   width: 100%;
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    max-width: 75%;
+  }
+  @media screen and (max-width: 575px) {
+    order: 2;
+    max-width: 100%;
+  }
   ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
+    @media screen and (max-width: 1199px) {
+      align-items: flex-start;
+    }
 
     li {
       background-color: #f9f9f9;
@@ -20,10 +30,25 @@
       cursor: pointer;
       transition: background-color 0.1s ease-in-out;
       @include noselect();
-      @media screen and (min-width: 992px) and (max-width: 1199px) {
-       margin-bottom: 30px;
-       width: 25%;
-       text-align: center;
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        margin-bottom: 30px;
+        width: 25%;
+        text-align: center;
+        word-break: break-word;
+      }
+
+      @media screen and (min-width: 576px) and (max-width: 767px) {
+        margin-bottom: 30px;
+        width: 30%;
+        text-align: center;
+        word-break: break-word;
+      }
+
+      @media screen and (max-width: 575px) {
+        width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+        word-break: break-word;
       }
 
       &:hover {
@@ -41,9 +66,9 @@
     }
     li:last-of-type {
       margin: 0;
-      @media screen and (min-width: 992px) and (max-width: 1199px) {
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
         margin-bottom: 30px;
-       }
+      }
     }
   }
   @media screen and (max-width: 991px) {
