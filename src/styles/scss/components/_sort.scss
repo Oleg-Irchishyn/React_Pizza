@@ -37,6 +37,8 @@
       @media screen and (max-width: 575px) {
         position: relative;
         margin-right: 10px;
+        top: 0;
+        right: 0;
       }
     }
 
@@ -85,5 +87,14 @@
   }
   &.visible {
     display: block;
+  }
+}
+
+html[lang="en"] .sort {
+  .sort__label svg {
+    right: -10px;
+    @media screen and (max-width: 575px) {
+      right: 0;
+    }
   }
 }
