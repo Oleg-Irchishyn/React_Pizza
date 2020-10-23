@@ -6,13 +6,17 @@ import PropTypes from 'prop-types';
 import cn from "classnames";
 import { useTranslation } from 'react-i18next';
 
+
 let anchor;
 const Categories = React.memo(({ items, setCategoty, visibleComponent }) => {
+  useEffect(() => {
+    localStorage.setItem("categorySelectedItem", JSON.stringify(activeItem));
+  })
   useEffect(() => {
     anchor = document.querySelector('#content__items');
   }, [])
 
-  const [activeItem, setActiveItem] = useState(null);
+  const [activeItem, setActiveItem] = useState(JSON.parse(localStorage.getItem('categorySelectedItem')));
   const { t } = useTranslation();
 
   const onSelectItem = (index) => {
