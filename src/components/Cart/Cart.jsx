@@ -49,7 +49,6 @@ const Cart = () => {
 
 
   return (
-    <div className="content">
       <div className="container container--cart">
         {
           totalCount ? <div className="cart">
@@ -108,7 +107,6 @@ const Cart = () => {
             </div>
         }
       </div>
-    </div>
   )
 }
 
