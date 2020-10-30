@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next';
 
 const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza, addedCountToCart }) => {
   const { t } = useTranslation();
-  let thin = t('singlePizza.sizetypeFirst');
-  let fatHeaded = t('singlePizza.sizetypeSecond');
+  const thin = t('singlePizza.sizetypeFirst');
+  const fatHeaded = t('singlePizza.sizetypeSecond');
 
   const availableTypes = [thin, fatHeaded];
   const availableSizes = [26, 30, 40];
@@ -31,7 +31,7 @@ const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza, 
       imageUrl,
       price,
       size: availableSizes[activeSize],
-      type: availableTypes[activeType]
+      type: activeType
     }
     onClickAddPizza(pizzaObject)
   }
@@ -76,7 +76,7 @@ const PizzaBlock = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza, 
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price"> {t('singlePizza.priceText')} {price} ₴</div>
-        <PizzaBlockButton onClick={handleOnClickAddPizza} addedCountToCart={addedCountToCart} outline/>
+        <PizzaBlockButton onClick={handleOnClickAddPizza} addedCountToCart={addedCountToCart} outline />
       </div>
     </div>
   )

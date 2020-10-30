@@ -3,7 +3,11 @@ import { RemoveItemButton } from '../../../components';
 import { useTranslation } from 'react-i18next';
 
 const CartItem = ({ id, name, type, size, totalPrice, totalCount, onRemovePizza, onPlusItem, onMinusItem }) => {
+
   const { t } = useTranslation();
+
+  const thin = t('singlePizza.sizetypeFirst');
+  const fatHeaded = t('singlePizza.sizetypeSecond');
 
   const handleRemoveClick = () => {
     onRemovePizza(id)
@@ -15,6 +19,13 @@ const CartItem = ({ id, name, type, size, totalPrice, totalCount, onRemovePizza,
 
   const handleMinusCartItem = () => {
     onMinusItem(id)
+  }
+
+  if (type === 0) {
+    type = thin;
+  }
+  else if (type === 1) {
+    type = fatHeaded;
   }
 
   return (
