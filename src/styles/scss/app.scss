@@ -40,6 +40,12 @@ body {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+      justify-content: space-around;
+    }
+     @media screen and (min-width: 1200px) {
+      justify-content: flex-start;
+    }
     @media screen and (max-width: 575px) {
       flex-direction: column;
       justify-content: center;

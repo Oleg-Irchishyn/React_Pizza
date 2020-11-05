@@ -6,6 +6,62 @@ const CartItem = ({ id, name, type, size, imageUrl, totalPrice, totalCount, onRe
 
   const { t } = useTranslation();
 
+  const pizzasNames = [
+    t('pizzasNames.1'),
+    t('pizzasNames.2'),
+    t('pizzasNames.3'),
+    t('pizzasNames.4'),
+    t('pizzasNames.5'),
+    t('pizzasNames.6'),
+    t('pizzasNames.7'),
+    t('pizzasNames.8'),
+    t('pizzasNames.9'),
+    t('pizzasNames.10'),
+    t('pizzasNames.11'),
+    t('pizzasNames.12'),
+    t('pizzasNames.13')
+  ]
+
+  if (id === 0) {
+    name = pizzasNames[0]
+  }
+  else if (id === 1) {
+    name = pizzasNames[1]
+  }
+  else if (id === 2) {
+    name = pizzasNames[2]
+  }
+  else if (id === 3) {
+    name = pizzasNames[3]
+  }
+  else if (id === 4) {
+    name = pizzasNames[4]
+  }
+  else if (id === 5) {
+    name = pizzasNames[5]
+  }
+  else if (id === 6) {
+    name = pizzasNames[6]
+  }
+  else if (id === 7) {
+    name = pizzasNames[7]
+  }
+  else if (id === 8) {
+    name = pizzasNames[8]
+  }
+  else if (id === 9) {
+    name = pizzasNames[9]
+  }
+  else if (id === 10) {
+    name = pizzasNames[10]
+  }
+  else if (id === 11) {
+    name = pizzasNames[11]
+  }
+  else if (id === 12) {
+    name = pizzasNames[12]
+  }
+
   const thin = t('singlePizza.sizetypeFirst');
   const fatHeaded = t('singlePizza.sizetypeSecond');
 

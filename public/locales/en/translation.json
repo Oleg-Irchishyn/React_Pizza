@@ -50,5 +50,20 @@
     "sizetypeSecond": "fathead",
     "priceText": "from",
     "buttonText": "Add"
+  },
+  "pizzasNames": {
+    "1": "Peperoni fresh with pepper",
+    "2": "Cheese",
+    "3": "BBQ Chiken",
+    "4": "Sour-sweet chicken",
+    "5": "Cheeseburger-pizza",
+    "6": "Crazy peperoni",
+    "7": "Peperoni",
+    "8": "Margarita",
+    "9": "Four seasons",
+    "10": "Vegetables and mushrooms  🌱",
+    "11": "Oceano",
+    "12": "Godfather",
+    "13": "Old Blues"
   }
 }

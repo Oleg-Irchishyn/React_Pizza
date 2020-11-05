@@ -47,7 +47,7 @@ const Main = ({ pizzas, isLoaded, setSortBy, sortBy, sortItems, categoryItems, a
   return (
     <div className="container">
       <div className="content__top">
-       <Categories visibleComponent={openedBurger} items={categoryItems} />
+        <Categories visibleComponent={openedBurger} items={categoryItems} />
         <SortPopup visibleComponent={openedBurger} activeSortType={sortBy} items={sortItems} setSortBy={setSortBy} />
       </div>
       <h2 className="content__title">{t('ContentTitle.title')}</h2>

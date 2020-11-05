@@ -515,7 +515,7 @@
     {
       "id": 5,
       "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
-      "name": "Крейзі пепероні",
+      "name": "Скажене пепероні",
       "types": [
         0
       ],
@@ -632,7 +632,7 @@
     {
       "id": 12,
       "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/30367198-f3bd-44ed-9314-6f717960da07.jpg",
-      "name": "Олд Блюз",
+      "name": "Старий Блюз",
       "types": [
         0,
         1
