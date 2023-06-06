@@ -1,6 +1,9 @@
 {
   "name": "react-pizza-shop",
   "version": "0.1.0",
+  "engines": {
+    "node": "14.0.0"
+  }
   "private": true,
   "homepage": " https://react-pizza-eshop.herokuapp.com",
   "dependencies": {
