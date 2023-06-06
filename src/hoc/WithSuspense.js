@@ -8,3 +8,5 @@ export const withSuspense = (Component) => {
     </Suspense>
   }
 }
+
+// updating app
